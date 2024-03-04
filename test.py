@@ -16,7 +16,7 @@ def run_program():
     shopping_cart = {}
     run_program = '0'
     while run_program != '5':
-        run_program = input('What would you like to do?\n\t To add an item type 1\n\t To remove an item type 2\n\t To view all items type 3 \n\t To update an item quantity/price type 4\n\t To exit type 5\n')
+        run_program = input('Welcome to Mike\'s shopping cart app. What would you like to do?\n Remeber when entering a price or a quantity use the \"0.00\" format!\n\t To add an item type 1\n\t To remove an item type 2\n\t To view all items in your cart type 3 \n\t To update an item quantity/price type 4\n\t To exit type 5\n')
         while not run_program.isdigit():
             run_program = input('Please enter a number')
 
@@ -46,6 +46,8 @@ def run_program():
             else:
                 print('Item not found.')
 
-    print('Exiting Shopping Cart.')
+    print('Thank you for shopping with us! Here is your final cart: ')
+    for name, info in shopping_cart.items():
+        print(f'Item: {name}, Price: {info["price"]}, Quantity: {info["quantity"]}')
 
 run_program()
